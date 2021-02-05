@@ -5,7 +5,7 @@ uci set luci.main.lang=zh_cn
 uci set luci.main.mediaurlbase=/luci-static/argon
 uci commit luci
 
-uci set system.@system[0].hostname=GodRos
+uci set system.@system[0].hostname=LEDE
 uci set system.@system[0].timezone=CST-8
 uci set system.@system[0].zonename=Asia/Shanghai
 uci commit system
@@ -74,8 +74,10 @@ uci set dhcp.lan.ra_default='1'
 uci commit dhcp
 
 sed -i '/REDIRECT --to-ports 53/d' /etc/firewall.user
-echo "#iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 53" >> /etc/firewall.user
-echo "#iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 53" >> /etc/firewall.user
+echo "iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 6053" >> /etc/firewall.user
+echo "iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 6053" >> /etc/firewall.user
+echo "iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5335" >> /etc/firewall.user
+echo "iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 5335" >> /etc/firewall.user
 
 sed -i '/option disabled/d' /etc/config/wireless
 sed -i '/set wireless.radio${devidx}.disabled/d' /lib/wifi/mac80211.sh

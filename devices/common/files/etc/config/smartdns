@@ -23,6 +23,25 @@ config smartdns
 	option cache_size '5120'
 	option ipv6_server '1'
 	option redirect 'dnsmasq-upstream'
+	list old_redirect 'dnsmasq-upstream'
+	list old_port '6053'
+	list old_enabled '1'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name '阿里DNS'
+	option ip '223.6.6.6'
+	option blacklist_ip '1'
+	option server_group 'china'
+
+config server
+	option enabled '1'
+	option type 'udp'
+	option name '114DNS'
+	option ip '114.114.114.114'
+	option blacklist_ip '1'
+	option server_group 'china'
 
 config server
 	option name '百度 BaiduDNS'
@@ -33,12 +52,12 @@ config server
 	option server_group 'china'
 
 config server
-	option name 'DNSPod DNS+'
 	option type 'udp'
 	option ip '119.29.29.29'
 	option blacklist_ip '1'
 	option server_group 'china'
 	option enabled '1'
+	option name '腾讯公共DNS'
 
 config server
 	option name 'V2EX DNS'

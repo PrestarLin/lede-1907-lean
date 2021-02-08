@@ -253,39 +253,39 @@ jobs:
         find openwrt/bin/packages/*/*  -name "*forked-daapd*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*music-remote-center*" | xargs -i mv -f {} ./firmware/
 	find openwrt/bin/packages/*/*  -name "*mwan3*" | xargs -i mv -f {} ./firmware/
-        find openwrt/bin/packages/*/*  -name "*mwan3helper*" | xargs -i mv -f {} ./firmware/
+	find openwrt/bin/packages/*/*  -name "*mwan3helper*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*n2n_v2*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*nps*" | xargs -i mv -f {} ./firmware/
 	find openwrt/bin/packages/*/*  -name "*nfs*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*openclash*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*openvpn*" | xargs -i mv -f {} ./firmware/
 	find openwrt/bin/packages/*/*  -name "*openvpn-server*" | xargs -i mv -f {} ./firmware/
-		    find openwrt/bin/packages/*/*  -name "*oaf*" | xargs -i mv -f {} ./firmware/
+	find openwrt/bin/packages/*/*  -name "*oaf*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*passwall*" | xargs -i mv -f {} ./firmware/
-		    find openwrt/bin/packages/*/*  -name "*pppoe-relay*" | xargs -i mv -f {} ./firmware/
-		    find openwrt/bin/packages/*/*  -name "*rp-pppoe-server*" | xargs -i mv -f {} ./firmware/
-		    find openwrt/bin/packages/*/*  -name "*privoxy*" | xargs -i mv -f {} ./firmware/
-		    find openwrt/bin/packages/*/*  -name "*ps3netsrv*" | xargs -i mv -f {} ./firmware/
+	find openwrt/bin/packages/*/*  -name "*pppoe-relay*" | xargs -i mv -f {} ./firmware/
+	find openwrt/bin/packages/*/*  -name "*rp-pppoe-server*" | xargs -i mv -f {} ./firmware/
+	find openwrt/bin/packages/*/*  -name "*privoxy*" | xargs -i mv -f {} ./firmware/
+	find openwrt/bin/packages/*/*  -name "*ps3netsrv*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*qbittorrent*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*rclone*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*serverchan*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*sqm*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*softethervpn*" | xargs -i mv -f {} ./firmware/
-		    find openwrt/bin/packages/*/*  -name "*luci-app-ssr-plus*" | xargs -i mv -f {} ./firmware/
+	find openwrt/bin/packages/*/*  -name "*luci-app-ssr-plus*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*syncdial*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*transmission*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*tinyproxy*" | xargs -i mv -f {} ./firmware/
-		    find openwrt/bin/packages/*/*  -name "*ttnode*" | xargs -i mv -f {} ./firmware/
+	find openwrt/bin/packages/*/*  -name "*ttnode*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*uugame*" | xargs -i mv -f {} ./firmware/ 
         find openwrt/bin/packages/*/*  -name "*udpxy*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*unblockmusic*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*usb-printer*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*v2ray-server*" | xargs -i mv -f {} ./firmware/
-		    find openwrt/bin/packages/*/*  -name "*verysync*" | xargs -i mv -f {} ./firmware/
+	find openwrt/bin/packages/*/*  -name "*verysync*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*vsftpd*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*watchcat*" | xargs -i mv -f {} ./firmware/
-		    find openwrt/bin/packages/*/*  -name "*webadmin*" | xargs -i mv -f {} ./firmware/
-		    find openwrt/bin/packages/*/*  -name "*wireguard*" | xargs -i mv -f {} ./firmware/
+	find openwrt/bin/packages/*/*  -name "*webadmin*" | xargs -i mv -f {} ./firmware/
+	find openwrt/bin/packages/*/*  -name "*wireguard*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*xlnetacc*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*zerotier*" | xargs -i mv -f {} ./firmware/
         cp openwrt/.config  ./firmware/${{matrix.target}}.config

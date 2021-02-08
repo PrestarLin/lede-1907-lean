@@ -327,6 +327,7 @@ jobs:
         zip -r luci-app-nfs.zip *nfs* || true
         zip -r luci-app-openclash.zip *openclash* || true
         zip -r luci-app-openvpn.zip *openvpn* || true
+                zip -r luci-app-oaf.zip *oaf* || true
         zip -r luci-app-openvpn-server.zip *openvpn-server* || true
         zip -r luci-app-passwall.zip *passwall*  || true
         zip -r luci-app-pppoe-relay.zip *pppoe-relay* || true

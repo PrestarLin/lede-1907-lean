@@ -9,7 +9,7 @@ sed -i 's/IMG_PREFIX:=/IMG_PREFIX:=$(shell date +%Y%m%d)-LEDE-D-Lean-/g' include
 
 
 svn export --force https://github.com/project-lede/openwrt-app/branches/luci18/luci-app-dockerman  package/diy/luci-app-dockerman
-svn export --force https://github.com/project-lede/openwrt-app/branches/luci18/docker package/diy/docker
+#svn export --force https://github.com/project-lede/openwrt-app/branches/luci18/docker package/diy/docker
 svn export --force https://github.com/project-lede/openwrt-app/branches/luci18/dockerd package/diy/dockerd
 svn export --force https://github.com/project-lede/openwrt-app/branches/luci18/luci-lib-docker  package/diy/luci-lib-docker
 svn export --force https://github.com/project-lede/openwrt-app/branches/luci18/luci-compat package/diy/luci-compat

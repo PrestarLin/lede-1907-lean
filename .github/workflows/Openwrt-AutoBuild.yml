@@ -212,6 +212,10 @@ jobs:
         echo -e "$(($(nproc)+1)) thread compile"
         make -j$(($(nproc)+1)) || make -j1 V=s
         echo "::set-output name=status::success"
+        
+    - name: Check space usage
+      if: (!cancelled())
+      run: df -hT
       
     - name: Upload bin directory
       uses: actions/upload-artifact@main
@@ -427,7 +431,7 @@ jobs:
         wetrans=$(echo $wetrans | grep -o -E "https[^ ]*")
         echo "WETRANS=$wetrans" >> $GITHUB_ENV
         echo "Download Link: ${{ env.EMOJI }} $wetrans ${{ env.EMOJI }} 🚀"
-
+        
     - name: Create release
       id: create_release
       if: env.REPO_TOKEN && env.UPLOAD_FIRMWARE_FOR_RELEASE == 'true'
@@ -448,7 +452,7 @@ jobs:
       with:
         files: "${{ env.FIRMWARE }}/*"
         name: ${{ env.date2 }}-LEDE-${{matrix.target}} ${{ env.EMOJI }}
-        tag_name: ${{ env.date }}_${{matrix.target}}
+        tag_name: ${{ env.date }}_LEDE-${{matrix.target}}
         body_path: release.txt
 
     - name: Upload firmware for artifact
@@ -475,14 +479,13 @@ jobs:
       uses: GitRML/delete-workflow-runs@main
       with:
         retain_days: 1
-        keep_minimum_runs: 15
+        keep_minimum_runs: 3
 
     - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@master
-      continue-on-error: true
-      if: env.UPLOAD_FIRMWARE_FOR_RELEASE == 'true' && !cancelled()
+      uses: dev-drprasad/delete-older-releases@v0.1.0
+      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        keep_latest: 15
+        keep_latest: 3
         delete_tags: true
       env:
-        GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

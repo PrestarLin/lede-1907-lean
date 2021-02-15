@@ -252,6 +252,7 @@ jobs:
         find openwrt/bin/packages/*/*  -name "*frpc*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*frps*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*flowoffload*" | xargs -i mv -f {} ./firmware/
+        find openwrt/bin/packages/*/*  -name "*hd-idle*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*haproxy-tcp*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*ipsec-vpnd*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*ipsec-vpnserver-manyusers*" | xargs -i mv -f {} ./firmware/
@@ -268,6 +269,7 @@ jobs:
         find openwrt/bin/packages/*/*  -name "*mwan3*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*mwan3helper*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*n2n_v2*" | xargs -i mv -f {} ./firmware/
+        find openwrt/bin/packages/*/*  -name "*nft-qos*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*nps*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*nfs*" | xargs -i mv -f {} ./firmware/
         find openwrt/bin/packages/*/*  -name "*openclash*" | xargs -i mv -f {} ./firmware/
@@ -327,6 +329,7 @@ jobs:
         zip -r luci-app-frps.zip *frps* || true
         zip -r luci-app-flowoffload.zip *flowoffload* || true
         zip -r luci-app-haproxy-tcp.zip *haproxy-tcp* || true
+        zip -r luci-app-hd-idle.zip *hd-idle* || true
         zip -r luci-app-ipsec-vpnd.zip *ipsec-vpnd* || true
         zip -r luci-app-ipsec-vpnserver-manyusers.zip *ipsec-vpnserver-manyusers* || true
         zip -r luci-app-iptvhelper.zip *iptvhelper* || true
@@ -341,13 +344,14 @@ jobs:
         zip -r luci-app-orked-daapd.zip *forked-daapd* || true	
         zip -r luci-app-mwan3.zip *mwan3* || true
         zip -r luci-app-mwan3helper.zip *mwan3helper* || true
+        zip -r luci-app-nft-qos.zip *nft-qos* || true
         zip -r luci-app-n2n_v2.zip *n2n_v2* || true
         zip -r luci-app-nps.zip *nps* || true
         zip -r luci-app-nfs.zip *nfs* || true
         zip -r luci-app-openclash.zip *openclash* || true
         zip -r luci-app-openclash.zip *ruby* || true
         zip -r luci-app-openvpn.zip *openvpn* || true
-                zip -r luci-app-oaf.zip *oaf* || true
+        zip -r luci-app-oaf.zip *oaf* || true
         zip -r luci-app-openvpn-server.zip *openvpn-server* || true
         zip -r luci-app-passwall.zip *passwall*  || true
         zip -r luci-app-pppoe-relay.zip *pppoe-relay* || true

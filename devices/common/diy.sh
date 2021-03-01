@@ -58,14 +58,10 @@ git clone https://github.com/rufengsuixing/luci-app-zerotier package/diy/luci-ap
 #svn export --force https://github.com/project-lede/openwrt-app/branches/luci18/qBittorrent-Enhanced-Edition package/diy/qBittorrent-Enhanced-Edition
 
 
-
-#cd package
-#svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall
-#cd -
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
 # 内核显示增加自己个性名称
 date=`date +%d.%m.%Y`
-sed -i "s/DISTRIB_DESCRIPTION.*/DISTRIB_DESCRIPTION='LEDE D%C From Lean OpenWrt %V '/g" package/base-files/files/etc/openwrt_release
+sed -i "s/DISTRIB_DESCRIPTION.*/DISTRIB_DESCRIPTION='LEDE N%C From Lean OpenWrt %V '/g" package/base-files/files/etc/openwrt_release
 sed -i "s/# REVISION:=x/REVISION:= $date/g" include/version.mk
